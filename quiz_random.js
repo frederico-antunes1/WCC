@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display the current question
     function displayQuestion() {
-        stopTimer();
+
+        if (currentQuestionIndex === 0 && currentPlayer === 1) {
         startTimer();
+        }
 
         if (currentPlayer === 1) {
             playerOneQuestionNumber++;
@@ -67,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle option selection
     function selectOption(selectedOption) {
+
+        stopTimer(); // Clear the timer before moving to the next question
+
         const options = document.querySelectorAll('.option');
         let correctAnswer = questions[currentQuestionIndex].correct_answer;
         
@@ -101,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (currentQuestionIndex < questions.length - 1) {
+            startTimer(); // Start the timer before moving to the next question
             setTimeout(() => {
                 currentQuestionIndex++;
                 currentPlayer = 3 - currentPlayer; // Toggle between player 1 (1) and player 2 (2)
@@ -133,8 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 progressBar.style.backgroundColor = '#4caf50';
             }
             if (progress >= 100) {
-                stopTimer(); // Clear the timer before moving to the next question
+                stopTimer();
+                
                 setTimeout(() => {
+                    startTimer(); // Clear the timer before moving to the next question
                     currentQuestionIndex++;
                     currentPlayer = 3 - currentPlayer;
                     displayQuestion();
