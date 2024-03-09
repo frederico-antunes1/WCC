@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Score Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <button id="index-button" onclick="window.location.href = 'index.html';">Home Page</button>
+    <div id="chartContainer">
+        <canvas id="myChart"></canvas> <!-- Canvas element for the first chart -->
+        <canvas id="myChart2"></canvas> <!-- Canvas element for the second chart -->
+    </div>
+    <!-- Button to clear localStorage data -->
+    <button id="clearLocalStorage">Clear data</button>
+    <script src="visualization.js"></script>
+
+</body>
+</html>
