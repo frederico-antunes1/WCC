@@ -139,11 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 progressBar.style.backgroundColor = '#4caf50';
             }
             if (progress >= 100) {
-                clearInterval(countdown);
+                startTimer();
                 setTimeout(() => {
                     currentQuestionIndex++;
                     currentPlayer = 3 - currentPlayer;
-                    startTimer();
                     displayQuestion()
                 }, 1000);
             }
