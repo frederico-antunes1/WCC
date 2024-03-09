@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 questions = data.results;
                 if (questions.length > 0) {
                     displayQuestion();
+                    startTimer();
                 } else {
                     console.error('No questions were returned from the API.');
                     resultsContainer.textContent = 'No questions available for the selected category and difficulty.';
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function displayQuestion() {
-        startTimer();
+    
         let currentQuestion = questions[currentQuestionIndex];
         //questionContainer.textContent = `Player ${currentPlayer}'s turn - ` + decodeHTMLEntities(currentQuestion.question);
         questionContainer.textContent = `Player ${currentPlayer === 1 ? playerOneName : playerTwoName}'s turn - ` + decodeHTMLEntities(currentQuestion.question);
@@ -98,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function selectOption(selectedOption) {
-        stopTimer();
         const options = document.querySelectorAll('.option');
         let correctAnswer = questions[currentQuestionIndex].correct_answer;
+        stopTimer();
         
         if (selectedOption === correctAnswer) {
             if (currentPlayer === 1) {
@@ -120,17 +121,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     
         if (currentQuestionIndex < questions.length - 1) {
+            startTimer();
             setTimeout(() => {
                 currentQuestionIndex++;
                 displayQuestion(); // Move to the next question after a delay
             }, 2000); // Set a delay for 2 seconds before moving on to the next question
         } else {   
+            stopTimer();
             setTimeout(showResults, 2000); // Show results after a delay if it's the last question
         }
 
         currentPlayer = currentPlayer === 1 ? 2 : 1;
     }
     function startTimer() {
+        clearInterval(countdown);
         let timeLeft = 10;
         let intervalDuration = 1000;
         countdown = setInterval(function() {
@@ -145,13 +149,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             timeLeft--;
 
-            if (timeLeft <= 2) {
+            if (progress >= 80) {
                 progressBar.style.backgroundColor = '#dc3545';
             } else {
                 progressBar.style.backgroundColor = '#4caf50';
             }
             if (progress >= 100) {
-                stopTimer(); // Clear the timer before moving to the next question
+                startTimer(); // Clear the timer before moving to the next question
                 setTimeout(() => {
                     currentQuestionIndex++;
                     currentPlayer = 3 - currentPlayer;

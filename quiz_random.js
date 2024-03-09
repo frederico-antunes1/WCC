@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             timeLeft--;
     
-            if (timeLeft <= 2) {
+            if (progress >= 80) {
                 progressBar.style.backgroundColor = '#dc3545';
             } else {
                 progressBar.style.backgroundColor = '#4caf50';
@@ -149,11 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, intervalDuration);
     }
     
-
-    function resertTimer() {
-        clearInterval(countdown);
-        startTimer();
-    }
 
     function stopTimer() {
         clearInterval(countdown);
