@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 questions = data.results;
                 displayQuestion();
+                startTimer();  // Start the timer when the questions are fetched
             })
             .catch(error => console.error('Error fetching data: ', error));
     }
@@ -33,9 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display the current question
     function displayQuestion() {
 
-        if (currentQuestionIndex === 0 && currentPlayer === 1) {
-        startTimer();
-        }
 
         if (currentPlayer === 1) {
             playerOneQuestionNumber++;
@@ -106,11 +104,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (currentQuestionIndex < questions.length - 1) {
-            startTimer(); // Start the timer before moving to the next question
+            startTimer();
             setTimeout(() => {
                 currentQuestionIndex++;
                 currentPlayer = 3 - currentPlayer; // Toggle between player 1 (1) and player 2 (2)
                 displayQuestion(); // Move to the next question after a delay
+                 // Start the timer before moving to the next questio
             }, 2000); // Set a delay for 2 seconds before moving on to the next question
         } else {
             stopTimer();
@@ -119,36 +118,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startTimer() {
+        clearInterval(countdown);
         let timeLeft = 10;
         let intervalDuration = 1000;
         countdown = setInterval(function() {
             if (countdownElement) {
                 countdownElement.textContent = timeLeft;
             }
-
-            const progress = (1-timeLeft/10)*100;
-
+    
+            const progress = (1 - timeLeft / 10) * 100;
+    
             if (progressBar) {
                 progressBar.style.width = progress + '%';
             }
             timeLeft--;
-
+    
             if (timeLeft <= 2) {
                 progressBar.style.backgroundColor = '#dc3545';
             } else {
                 progressBar.style.backgroundColor = '#4caf50';
             }
             if (progress >= 100) {
-                stopTimer();
-                
+                clearInterval(countdown);
                 setTimeout(() => {
-                    startTimer(); // Clear the timer before moving to the next question
                     currentQuestionIndex++;
                     currentPlayer = 3 - currentPlayer;
-                    displayQuestion();
-                }, 2000);
+                    startTimer();
+                    displayQuestion()
+                }, 1000);
             }
-        }, intervalDuration)
+        }, intervalDuration);
+    }
+    
+
+    function resertTimer() {
+        clearInterval(countdown);
+        startTimer();
     }
 
     function stopTimer() {
