@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Trivia Quiz - Customized Game</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customize Your Game</h1>
+        
+        <div class="dropdown" id="difficultyDropdown">
+            <button class="dropbtn">Difficulty</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="selectOption('difficulty', 'easy')">easy</a>
+                <a href="#" onclick="selectOption('difficulty', 'medium')">medium</a>
+                <a href="#" onclick="selectOption('difficulty', 'hard')">hard</a>
+            </div>
+        </div>
+
+        <div class="dropdown" id="categoryDropdown">
+            <button class="dropbtn">Category</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="selectOption('category', 'Music')">Music</a>
+                <a href="#" onclick="selectOption('category', 'Science')">Science</a>
+                <a href="#" onclick="selectOption('category', 'History')">History</a>
+                <a href="#" onclick="selectOption('category', 'Geography')">Geography</a>
+                <a href="#" onclick="selectOption('category', 'General Knowledge')">General Knowledge</a>
+            </div>
+        </div>
+
+        <button id="startCustomGame" onclick="window.location.href='quiz_customized.html'">Start Game</button>
+        <button id="homeButton" onclick=" window.location.href = 'index.html'">Home</button>
+        <button id="backButton" onclick=" window.location.href = 'GameOption.html'">Back</button>
+        <button id="music-toggle">Music</button>
+    </div>
+
+    <script src="/public/js/customGame.js"></script>
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/backgroundMusic.js"></script>
+    <style>
+        body, html {
+          background-image: url('background_games.png');
+          background-size: cover;
+          background-position: center;
+        }
+      </style>
+    <audio autoplay loop>
+        <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>  
+</body>
+</html>

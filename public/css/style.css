@@ -1,0 +1,297 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #282c34; /* Fallback color */
+    color: #428ea3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*background-image: url('background.png'); /* Updated path */
+    /*background-size: cover; /* Ensures the image covers the entire element */
+    /*background-position: center; /* Centers the image */
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #61dafb;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: #282c34;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #4fa1c0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    max-height: 180px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #4fa1c0;}
+
+.dropbtn.selected {
+    background-color: #555;
+}
+
+#quiz-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative
+}
+
+#question {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#options {
+    margin-bottom: 1em;
+}
+
+.option {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #dddddd00;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #e5e5e5;
+    background-color:#428ea3;
+    border-radius: 5px;
+}
+
+#next {
+    padding: 10px 20px;
+    font-size: 1em;
+    display: none;
+}
+
+.correct {
+    background-color: #28a745; /* Green color for correct answers */
+    color: white;
+}
+
+.incorrect {
+    background-color: #dc3545; /* Red color for incorrect answers */
+    color: white;
+}
+
+#countdown {
+    font-size: 12em;
+    color: #61dafb;
+    margin: 10px;
+}
+
+#progress-bar-container {
+    width: 100%;
+    background-color: #ccc;
+    height: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: width 1s linear;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 1ms linear;
+}
+
+#index-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+}
+
+#clearLocalStorage {
+    position: absolute;
+    top: 70px; 
+    left: 10px;
+    z-index: 9999;
+    padding: 10px 20px; 
+    font-size: 16px; 
+}
+
+#title {
+    border: 3px solid green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+#chartContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+#myChart {
+    padding-top: 10px;
+    width: 100%; 
+    width:100%;
+    display: flex;
+    margin: 20px auto;
+}
+
+#myChart2 {
+    display: flex;
+}
+
+#homeButton {
+    position: fixed; 
+    top: 10px;      
+    right: 10px;    
+    padding: 10px 20px;
+    background-color: #61dafb;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+
+}
+#homeButton:hover {
+    background-color: #2980b9;
+}
+
+#music-toggle {
+    position: fixed; 
+    top: 10px;      
+    right: 120px;    
+    padding: 10px 20px;
+    background-color: #61dafb;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#music-toggle:hover {
+    background-color: #2980b9;
+}
+
+
+#playerOneName {
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px; /* Increased size */
+    background-color: #ebf0f474;
+    border: #282c3400;
+    width: 300px; /* Increased width */
+    font-size: medium;
+}
+
+#playerTwoName {
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ebf0f474;
+    border: #282c3400;
+    width: 300px;
+    font-size: medium;
+
+}
+
+#SinglePlayerName {
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ebf0f474;
+    border: #282c3400;
+    width: 200px;
+    font-size: medium;
+
+}
+#backButton {
+    position: fixed;    
+    top: 10px;      
+    left: 10px;    
+    padding: 10px 20px;
+    background-color: #61dafb;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other items */
+}
+
+#backButton:hover {
+    background-color: #2980b9;
+}
+
+body.quiz_customized_1Player, html.quiz_customized_1Player {
+    background-image: url('background_games.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#player-name {
+    font-size: 1.8em;
+    color: #61dafb;
+    margin-bottom: 20px;
+}

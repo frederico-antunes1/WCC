@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia Quiz</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="player-name"></div> <!-- player name above time bar-->
+        <div id="progress-bar-container"></div>
+        <div id="question"></div>
+        <div id="options">
+            <!-- Options will be populated here -->
+        </div>
+        <button id="next">Next Question</button>
+        <div id="results"></div>
+        <button id="homeButton" onclick=" window.location.href = 'index.html'">Home</button>
+        <button id="music-toggle">Music</button>
+    </div>
+    
+    <script src="/public/js/quiz_random.js"></script>
+    <style>
+        body, html {
+          background-image: url('background_games.png');
+          background-size: cover;
+          background-position: center;
+        }
+      </style>
+      <script src="/public/js/backgroundMusic.js"></script>
+    <audio autoplay loop>
+        <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>

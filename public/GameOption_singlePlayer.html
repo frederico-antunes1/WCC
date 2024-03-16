@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Trivia Quiz</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nova Trivia Quiz</h1>
+        <button id="RandomGame" onclick="window.location.href='quiz_random_1Player.html'">Random Game</button>
+        <button id="customizedGame" onclick="window.location.href='customized_game_1Player.html'">Customized Game</button>
+        <button id="homeButton" onclick=" window.location.href = 'index.html'">Home</button>
+        <button id="backButton" onclick=" window.location.href = 'OnePlayer.html'">Back</button>
+        <button id="music-toggle">Music</button>
+    </div>
+
+
+    <script src="/public/js/script.js"></script>
+    <script src="/public/js/backgroundMusic.js"></script>
+
+    <style>
+        body, html {
+          background-image: url('background_base.png');
+          background-size: cover;
+          background-position: center;
+        }
+      </style>
+      <audio autoplay loop>
+          <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Trivia Quiz - 2 Players</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nova Trivia Quiz</h1>
+        <input type="text" id="SinglePlayerName" placeholder="Player name">
+        <button onclick="saveSingleNameAndStart()">Start</button>
+        <p id="message" style="color:rgb(219, 95, 95); display:none;"></p>
+    </div>
+
+    <script src="/public/js/OnePlayer.js"></script>
+    <button id="homeButton" onclick=" window.location.href = 'index.html'">Home</button>
+    <button id="backButton" onclick=" window.location.href = 'index.html'">Back</button>
+    <button id="music-toggle">Music</button>
+    
+    <style>
+        body, html {
+          background-image: url('background_base.png');
+          background-size: cover;
+          background-position: center;
+        }
+      </style>
+      <script src="/public/js/backgroundMusic.js"></script>
+    <audio autoplay loop>
+        <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
