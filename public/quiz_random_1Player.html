@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Trivia Quiz</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
-        <div id="quiz-container">
+    <div id="quiz-container">
             <div id="progress-bar-container"></div>
         <div id="question"></div>
         <div id="options">
@@ -18,17 +18,18 @@
         <button id="music-toggle">Music</button>
     </div>
     
-    <script src="/public/js/quiz_random_1Player.js"></script>
+    <script src="../public/js/quiz_random_1Player.js"></script>
     <style>
         body, html {
-          background-image: url('/public/images/background_games.png');
-          background-size: cover;
+          background-image: url('../public/images/background_games.png');
           background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
         }
       </style>
-      <script src="/public/js/backgroundMusic.js"></script>
+      <script src="../public/js/backgroundMusic.js"></script>
     <audio autoplay loop>
-        <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+        <source src="../public/music/BackgroundMusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </body>

@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         questionContainer.style.display = 'none';
         optionsContainer.style.display = 'none';
         nextButton.style.display = 'none';
+        progressBar.style.display = 'none';
         if (progressBar) {
             progressBar.style.display = 'none'; // Hide the progress bar
         }

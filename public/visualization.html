@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Scores Charts</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
-    <link rel="stylesheet" href="/public/css/visualization.css">
+    <link rel="stylesheet" href="../public/css/visualization.css">
     <!--h1 id="title">Score graphics</h1-->
 </head>
 <body>
@@ -17,17 +17,18 @@
 
     <button id="clearLocalStorage">Clear data</button>
     <button id="music-toggle">Music</button>
-    <script src="/public/js/visualization.js"></script>
+    <script src="../public/js/visualization.js"></script>
     <style>
         body, html {
-          background-image: url('/public/images/background_viz.png');
+          background-image: url('../public/images/background_viz.png');
           background-size: cover;
           background-position: center;
+          background-repeat: no-repeat;
         }
       </style>
-    <script src="/public/js/backgroundMusic.js"></script>
+    <script src="../public/js/backgroundMusic.js"></script>
     <audio autoplay loop>
-      <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+      <source src="../public/music/BackgroundMusic.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
    </audio>
 </body>

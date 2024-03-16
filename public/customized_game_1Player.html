@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nova Trivia Quiz - Customized Game</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
@@ -36,19 +36,20 @@
         <button id="backButton" onclick=" window.location.href = 'GameOption_singlePlayer.html'">Back</button>
         <button id="music-toggle">Music</button>
     </div>
-    <script src="/public/js/customGame.js"></script>
-    <script src="/public/js/script.js"></script>
-    <script src="/public/js/backgroundMusic.js"></script>
+    <script src="../public/js/customGame.js"></script>
+    <script src="../public/js/script.js"></script>
+    <script src="../public/js/backgroundMusic.js"></script>
     <style>
         body,
         html {
-            background-image: url('/public/images/background_games.png');
-            background-size: cover;
+            background-image: url('../public/images/background_games.png');
             background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
         }
     </style>
     <audio autoplay loop>
-        <source src="/public/music/BackgroundMusic.mp3" type="audio/mpeg">
+        <source src="../public/music/BackgroundMusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </body>
